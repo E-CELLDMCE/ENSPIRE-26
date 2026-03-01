@@ -2279,7 +2279,7 @@ header {
   align-items: center !important;
   justify-content: space-between !important;
   padding: 0 30px !important;
-  position: fixed !important;
+  position: relative !important;
   top: 15px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;

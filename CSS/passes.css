@@ -50,7 +50,7 @@ body > header {
     align-items: center !important;
     justify-content: center !important; /* Centers the nav list within the pill */
     padding: 0 40px !important;
-    position: fixed !important;
+    position: relative !important; /* Changed from fixed to relative to allow the pill to be positioned within the header */
     
     top: 20px !important; 
     left: 50% !important;
