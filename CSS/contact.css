@@ -400,6 +400,9 @@ li a.active {
     transition: 0.3s;
 }
 
+.icons a{
+    text-decoration: none;
+}
 .icons i:hover {
     color: var(--glow);
 }
