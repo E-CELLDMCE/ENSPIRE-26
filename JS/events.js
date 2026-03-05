@@ -89,6 +89,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (qrSrc) {
                     qrImage.src = qrSrc;
                 }
+                // Get the Google Form URL for this event
+                const formUrl = this.getAttribute("data-form-url");
+                const formLink = document.getElementById("modal-form-link");
+                if (formLink) {
+                    if (formUrl) {
+                        formLink.href = formUrl;
+                        formLink.style.display = "inline-block";
+                    } else {
+                        formLink.href = "#";
+                        formLink.style.display = "none";
+                    }
+                }
                 qrModal.style.display = "block";
             });
         });
