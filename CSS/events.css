@@ -349,14 +349,14 @@ nav ul li a.active {
     margin: 0 auto;
 }
 
-/* golden card should sit centered under the two-column grid */
+/* golden card should sit centered under the two-column grid 
 .card.golden {
-    /* span both columns */
+   /* span both columns 
     grid-column: 1 / -1;
     justify-self: center;
-    /* nudge slightly left so it's visually between the two cards above */
+    /* nudge slightly left so it's visually between the two cards above 
     transform: translateX(-20px);
-}
+} */
 
 .card:hover .card-inner {
     transform: rotateY(180deg);
@@ -616,6 +616,11 @@ body {
 /* golden theme */
 .golden {
     --event-color: #FFD700;
+    color: var(--event-color);
+}
+
+.comedy {
+ --event-color: #ff0090e1;
     color: var(--event-color);
 }
 
