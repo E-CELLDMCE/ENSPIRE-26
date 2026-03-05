@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // Match the CSS .active class
             const isActive = navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
-            
+
             if (isActive) {
                 if (menuText) {
                     menuText.textContent = 'Close';
-                    menuText.style.color = "#ffffff"; 
+                    menuText.style.color = "#ffffff";
                 }
-                document.body.style.overflow = 'hidden'; 
+                document.body.style.overflow = 'hidden';
             } else {
                 if (menuText) {
                     menuText.textContent = 'Menu';
@@ -70,5 +70,39 @@ document.addEventListener('DOMContentLoaded', () => {
             // Hide the photo to reveal the base video
             if (mainBg) mainBg.style.opacity = "0";
         });
+    });
+});
+
+// Modal Logic for QR Codes
+document.addEventListener('DOMContentLoaded', () => {
+    const qrModal = document.getElementById("qrModal");
+    const qrImage = document.getElementById("modal-qr-img");
+    const qrButtons = document.querySelectorAll(".qr-register-btn");
+    const closeModalBtn = document.querySelector(".close-modal");
+
+    if (qrButtons.length > 0 && qrModal && qrImage) {
+        qrButtons.forEach(btn => {
+            btn.addEventListener("click", function (event) {
+                event.preventDefault();
+                // Get the specific QR image for this event
+                const qrSrc = this.getAttribute("data-qr-src");
+                if (qrSrc) {
+                    qrImage.src = qrSrc;
+                }
+                qrModal.style.display = "block";
+            });
+        });
+    }
+
+    if (closeModalBtn && qrModal) {
+        closeModalBtn.addEventListener("click", function () {
+            qrModal.style.display = "none";
+        });
+    }
+
+    window.addEventListener("click", function (event) {
+        if (event.target === qrModal) {
+            qrModal.style.display = "none";
+        }
     });
 });

@@ -124,7 +124,8 @@
                         <div class="card-hover">
                             <h2>IDEATHON</h2>
                             <h4>Offline competition to understand the startup system</h4>
-                            <a href="events.html"><button>Register</button></a>
+                            <button class="qr-register-btn"
+                                data-qr-src="../Images/QRcode/ideathon.jpeg">Register</button>
                         </div>
                     </div>
 
@@ -134,8 +135,9 @@
 
                         </div>
                         <div class="card-hover">
-                            <h2>SPEAKERS SESSIONS</h2>
+                            <h2>TALKx</h2>
                             <h4>To have quality knoweledge to students and to spread entrepreneurial awareness</h4>
+                            <button class="qr-register-btn" data-qr-src="../Images/QRcode/talkx.jpeg">Register</button>
                             <a href="passes.html"><button>Passes</button></a>
                         </div>
                     </div>
@@ -148,7 +150,8 @@
                         <div class="card-hover">
                             <h2>STARTUP HUB</h2>
                             <h4>New opportunities for students to excel in their career</h4>
-                            <a href="events.html"><button>Register</button></a>
+                            <button class="qr-register-btn"
+                                data-qr-src="../Images/QRcode/startuphub.jpeg">Register</button>
                         </div>
                     </div>
 
@@ -161,7 +164,8 @@
                             <h2>IPL AUCTION</h2>
                             <h4>Activity where students will learn money management and risk taking abilities</h4>
 
-                            <a href="events.html"><button>Register</button></a>
+                            <button class="qr-register-btn"
+                                data-qr-src="../Images/QRcode/iplauction.jpeg">Register</button>
                             <a href="passes.html"><button>Passes</button></a>
 
                         </div>
@@ -175,7 +179,8 @@
                         <div class="card-hover">
                             <h3>TECHXPIRE</h3>
                             <h4>An offline project exhibition for students to build a real-time project model</h4>
-                            <a href="events.html"><button>Register</button></a>
+                            <button class="qr-register-btn"
+                                data-qr-src="../Images/QRcode/techxpire.jpeg">Register</button>
                             <a href="passes.html"><button>Passes</button></a>
                         </div>
                     </div>
@@ -188,9 +193,26 @@
                         <div class="card-hover">
                             <h2>VR ARENA</h2>
                             <h4>To give new experience to students</h4>
-                            <a href="events.html"><button>Register</button></a>
+                            <button class="qr-register-btn"
+                                data-qr-src="../Images/QRcode/vrarena.jpeg">Register</button>
                         </div>
                     </div>
+
+                    <!-- standup comedy event card -->
+                    <div class="event-card comedy">
+                        <div class="card-front">
+                            <img src="../Images/events/standup.png" alt="Standup Comedy">
+                        </div>
+                        <div class="card-hover">
+                            <h2>STANDUP COMEDY</h2>
+                            <h4>Unwind and laugh with us at our Stand-Up Comedy Event!</h4>
+                            <button class="qr-register-btn"
+                                data-qr-src="../Images/QRcode/standup.jpeg">Register</button>
+                            <a href="passes.html"><button>Passes</button></a>
+                        </div>
+                    </div>
+
+
 
                     <!-- golden color event card -->
                     <div class="event-card golden">
@@ -201,7 +223,7 @@
                         <div class="card-hover">
                             <h2>BGMI EVENT</h2>
                             <h4>Battle, survive, and claim the Winner Winner Chicken Dinner in BGMI!</h4>
-                            <a href="events.html"><button>Register</button></a>
+                            <button class="qr-register-btn" data-qr-src="../Images/QRcode/bgmi.jpeg">Register</button>
                         </div>
                     </div>
 
@@ -419,6 +441,15 @@
             </section>
         </div>
         </section>
+
+        <!-- Modal for QR Code -->
+        <div id="qrModal" class="qr-custom-modal">
+            <div class="qr-custom-modal-content">
+                <span class="qr-custom-close-modal">&times;</span>
+                <img src="" alt="QR Code goes here" id="modal-qr-img">
+                <p style="margin-top: 15px; font-size: 1.2rem; color: #fff;">Download App to Register</p>
+            </div>
+        </div>
 
         <footer>
             <div class="footer-content">

@@ -106,40 +106,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-// --- Updated Nav Toggle Logic ---
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
-const menuText = document.querySelector('.menu-text');
-const menuPill = document.querySelector('.menu-pill');
-const bars = document.querySelectorAll('.bar');
+    // --- Updated Nav Toggle Logic ---
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const menuText = document.querySelector('.menu-text');
+    const menuPill = document.querySelector('.menu-pill');
+    const bars = document.querySelectorAll('.bar');
 
-// --- Updated Nav Toggle Logic ---
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-        const isActive = navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-        
-        if (isActive) {
-            // Force text to WHITE so it's visible on the dark menu card
-            if (menuText) {
-                menuText.textContent = 'Close';
-                menuText.style.color = "#ffffff"; 
-                menuText.style.opacity = "1";
+    // --- Updated Nav Toggle Logic ---
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            const isActive = navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+
+            if (isActive) {
+                // Force text to WHITE so it's visible on the dark menu card
+                if (menuText) {
+                    menuText.textContent = 'Close';
+                    menuText.style.color = "#ffffff";
+                    menuText.style.opacity = "1";
+                }
+                // Ensure the hamburger bars also stay white
+                bars.forEach(b => b.style.backgroundColor = "#ffffff");
+                document.body.style.overflow = "hidden";
+            } else {
+                if (menuText) {
+                    menuText.textContent = 'Menu';
+                    menuText.style.color = "#ffffff";
+                    menuText.style.opacity = "1";
+                }
+                bars.forEach(b => b.style.backgroundColor = "#ffffff");
+                document.body.style.overflow = "auto";
             }
-            // Ensure the hamburger bars also stay white
-            bars.forEach(b => b.style.backgroundColor = "#ffffff");
-            document.body.style.overflow = "hidden"; 
-        } else {
-            if (menuText) {
-                menuText.textContent = 'Menu';
-                menuText.style.color = "#ffffff";
-                menuText.style.opacity = "1";
-            }
-            bars.forEach(b => b.style.backgroundColor = "#ffffff");
-            document.body.style.overflow = "auto";
-        }
-    });
-}
+        });
+    }
 
     // --- 3. SPONSOR CARDS HOVER EFFECT ---
     document.querySelectorAll('.sponsor-card').forEach(card => {
@@ -204,4 +204,38 @@ if (hamburger && navMenu) {
             startAutoPlay();
         }
     }
+});
+
+// Modal Logic for QR Codes
+document.addEventListener('DOMContentLoaded', () => {
+    const qrModal = document.getElementById("qrModal");
+    const qrImage = document.getElementById("modal-qr-img");
+    const qrButtons = document.querySelectorAll(".qr-register-btn");
+    const closeModalBtn = document.querySelector(".qr-custom-close-modal");
+
+    if (qrButtons.length > 0 && qrModal && qrImage) {
+        qrButtons.forEach(btn => {
+            btn.addEventListener("click", function (event) {
+                event.preventDefault();
+                // Get the specific QR image for this event
+                const qrSrc = this.getAttribute("data-qr-src");
+                if (qrSrc) {
+                    qrImage.src = qrSrc;
+                }
+                qrModal.style.display = "block";
+            });
+        });
+    }
+
+    if (closeModalBtn && qrModal) {
+        closeModalBtn.addEventListener("click", function () {
+            qrModal.style.display = "none";
+        });
+    }
+
+    window.addEventListener("click", function (event) {
+        if (event.target === qrModal) {
+            qrModal.style.display = "none";
+        }
+    });
 });

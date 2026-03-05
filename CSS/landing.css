@@ -410,8 +410,19 @@ CONTENT .content {
   box-shadow: 0 0 20px rgba(253, 57, 57, 0.5);
 }
 
+
 .vr:hover {
   box-shadow: 0 0 30px rgba(253, 57, 57, 0.8), inset 0 0 20px rgba(253, 57, 57, 0.2);
+}
+
+.comedy {
+  --clr: #ff00cc;
+  border-color: #ff00cc !important;
+  box-shadow: 0 0 20px rgba(255, 0, 204, 0.5);
+}
+
+.comedy:hover {
+  box-shadow: 0 0 30px rgba(255, 0, 204, 0.8), inset 0 0 20px rgba(255, 0, 204, 0.2);
 }
 
 .golden {
@@ -2521,4 +2532,56 @@ nav ul li a.active {
     display: block !important;
     text-align: center;
   }
+}
+
+/* ==============================
+   MODAL STYLES (ADDED FOR QR)
+   ============================== */
+.qr-custom-modal {
+  display: none;
+  position: fixed;
+  z-index: 20000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.qr-custom-modal-content {
+  background-color: #111;
+  margin: 15% auto;
+  padding: 20px;
+  border: 2px solid #ff9800;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 20px #ff9800;
+}
+
+.qr-custom-close-modal {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.qr-custom-close-modal:hover,
+.qr-custom-close-modal:focus {
+  color: #ff9800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal-qr-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 15px;
 }
