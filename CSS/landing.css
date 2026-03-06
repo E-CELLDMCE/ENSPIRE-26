@@ -300,7 +300,15 @@ CONTENT .content {
   z-index: 3;
   text-align: center;
   padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
+.card-hover h2,
+.card-hover h3 {
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .card-hover h2,
@@ -444,11 +452,13 @@ CONTENT .content {
   }
 }
 
-.events-grid .event-card.golden {
-  grid-column: 2 / 3;
-  grid-row: 3;
-  justify-self: center;
-  align-self: start;
+@media (min-width: 901px) {
+  .events-grid .event-card.golden {
+    grid-column: 2 / 3;
+    grid-row: 3;
+    justify-self: center;
+    align-self: start;
+  }
 }
 
 /* ===========================
@@ -463,23 +473,29 @@ CONTENT .content {
     grid-template-columns: 1fr !important;
     gap: 2.5rem !important;
     padding: 0 1.5rem !important;
+    justify-items: center !important;
+    justify-content: center !important;
+    display: grid !important; /* Ensure it stays a grid */
+  }
+
+  .event-card {
+    max-width: 320px;
+    width: 100% !important;
+    margin: 0 auto !important;
+    border-width: 2px !important;
+    display: block !important; /* Ensure all cards are visible */
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .card-front {
+    padding: 5px !important;
   }
 }
 
 @media (max-width: 768px) {
   .events-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0 1rem;
-  }
-
-  .event-card {
-    max-width: 320px;
-    border-width: 2px !important;
-  }
-
-  .card-front {
-    padding: 5px !important;
+    gap: 2rem !important;
   }
 }
 
@@ -568,21 +584,32 @@ CONTENT .content {
 
 @media(max-width:480px) {
   .event-card {
-    max-width: 320px;
+    max-width: 280px;
+    width: 90% !important;
+  }
+
+  .card-hover {
+    padding: 10px !important;
   }
 
   .card-hover h2,
   .card-hover h3 {
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
+    word-break: break-word;
+    margin-bottom: 0.3rem !important;
+    line-height: 1.2 !important;
   }
 
   .card-hover h4 {
-    font-size: 0.65rem !important;
+    font-size: 0.6rem !important;
+    margin-bottom: 4px !important;
+    line-height: 1.1 !important;
   }
 
   .card-hover button {
-    padding: 4px 8px !important;
-    font-size: 9px !important;
+    padding: 3px 6px !important;
+    font-size: 8px !important;
+    margin: 2px !important;
   }
 }
 
@@ -1000,28 +1027,14 @@ iframe {
   border: none;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  background: #0b0b0f;
-  color: white;
-  padding: 40px 0;
-}
-
-/* Title */
-.title {
-  text-align: center;
-  font-size: 4rem;
-  font-weight: 900;
-  color: white;
-  text-shadow: 0 0 10px red;
-  margin-bottom: 100px;
-  /* Increased margin bottom */
+/* Speaker Section specific titles - scoped to speakercard if needed, 
+   but removed global overrides that break other sections */
+.speaker-card .info .name {
+  color: #ff4cff;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
 }
 
 /* Grid */
@@ -1932,9 +1945,9 @@ main {
   }
 
   /* Ensure no elements push the layout down */
+  /* Removed aggressive margin reset that broke centering */
   * {
     box-sizing: border-box;
-    margin: 0;
   }
 
   /* Remove the spacer on mobile to let hero start at top */

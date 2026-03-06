@@ -240,16 +240,8 @@ nav.custom-nav a.active::after {
 }
 
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  background: #000;
-}
+/* Removed redundant global reset that was breaking layouts */
+/* body { background: #000; } */
 
 /* HERO SECTION */
 .hero {
@@ -569,11 +561,13 @@ CONTENT .content {
   }
 }
 
-.events-grid .event-card.golden {
-  grid-column: 2 / 3;
-  grid-row: 3;
-  justify-self: center;
-  align-self: start;
+@media (min-width: 901px) {
+  .events-grid .event-card.golden {
+    grid-column: 2 / 3;
+    grid-row: 3;
+    justify-self: center;
+    align-self: start;
+  }
 }
 
 /* ===========================
@@ -589,10 +583,20 @@ CONTENT .content {
     grid-template-columns: 1fr !important;
     gap: 2.5rem !important;
     padding: 0 1.5rem !important;
+    justify-items: center !important;
+    justify-content: center !important;
+    display: grid !important;
   }
 
   .event-card {
+    max-width: 320px;
+    width: 100% !important;
+    margin: 0 auto !important;
     border-width: 2px !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
   }
 
   .card-front {
@@ -605,6 +609,8 @@ CONTENT .content {
     grid-template-columns: 1fr !important;
     gap: 2.5rem !important;
     padding: 0 1.5rem !important;
+    justify-items: center !important;
+    justify-content: center !important;
   }
 
   .event-card {
@@ -618,9 +624,17 @@ CONTENT .content {
     padding: 3px !important;
   }
 
+  .card-hover {
+    padding: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   .card-hover h2,
   .card-hover h3 {
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
+    word-break: break-word !important;
+    max-width: 100% !important;
   }
 
   .card-hover h4 {
