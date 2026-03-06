@@ -584,11 +584,11 @@ CONTENT .content {
 
 /* Responsive Layouts */
 
-@media(max-width:900px) {
+@media(max-width:1024px) {
   .events-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
-    padding: 0 0.3rem;
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    padding: 0 1.5rem !important;
   }
 
   .event-card {
@@ -602,15 +602,15 @@ CONTENT .content {
 
 @media(max-width:640px) {
   .events-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-    padding: 0 0.2rem;
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    padding: 0 1.5rem !important;
   }
 
   .event-card {
     width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
     border-width: 2px !important;
   }
 
